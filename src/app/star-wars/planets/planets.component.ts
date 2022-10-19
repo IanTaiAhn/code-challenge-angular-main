@@ -12,27 +12,28 @@ export class PlanetsComponent implements OnInit {
   // We can have all 10 planets, and assign them to our sorted array.
   planet1: string | undefined;
   planet2: string | undefined;
-
+  planetArr: Array<any> = [];
 
   constructor(private planetsService: PlanetsService, private http: HttpClient) {
-    const planetArr: any[] = [];
-    const planetNameArr: any[] = [];
+    // Maybe it's better to create them out of this constructor?
+    // const planetArr: any[] = [];
 
     this.getPlanets().subscribe((planets: any) => {
       // populate array with planets.
       planets.results.forEach((element: any) => {
-        planetArr.push(element);
+        this.planetArr.push(element);
       });
       // Will delete later
       this.planet1 = planets.results[0].name;
       this.planet2 = planets.results[1].name;
 
+      // console.log(this.planetArr[0]);
       // Here we're sorting the array of objects by name.
-      planetArr.sort((a, b) => a.name.localeCompare(b.name));
+      this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
       
       // planetArr is an array of objects.
-      for (const el of planetArr) {
-        // console.log(el);
+      for (const el of this.planetArr) {
+        // console.log(el.name);
 
         // const values = Object.values(el);
         // use values array or:

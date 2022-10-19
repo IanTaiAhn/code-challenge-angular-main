@@ -9,14 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class PlanetListComponent implements OnInit {
   @Input() planetName: string | undefined;
-
+// I may just do all of that bizz in here then.
   constructor(private http: HttpClient) {
         // Example on getting planets from swapi api
         this.getPlanets().subscribe((planets: any) => {
 
         });
    }
-   
+
    getPlanets(): Observable<any> {
     const planetApiUrl = 'https://swapi.dev/api/planets';
     return this.http.get(planetApiUrl);
