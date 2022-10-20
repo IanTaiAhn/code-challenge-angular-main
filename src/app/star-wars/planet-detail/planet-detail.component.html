@@ -1,1 +1,14 @@
-<p>planet-detail works!</p>
+<!-- This is the details componet, so we should include all the key value pairs here. -->
+
+<!-- <p class="textStyle" *ngFor="let planetDetails of planetDetails1 | keyvalue">{{planetDetails.key}} -- {{planetDetails.value}}</p> -->
+
+<!-- <p *ngFor="let keys of planetDetailsKey" class="">{{keys}}</p>
+<p *ngFor="let vals of planetDetailsVal" class="">{{vals}}</p> -->
+<div id="details" class="layout">
+    <div class="">
+        <p class="textStyle" *ngFor="let keys of planetKeys">{{keys}}</p>
+    </div>
+    <div>
+        <p class="" *ngFor="let vals of planetVals">{{vals}}</p>
+    </div>
+</div>
