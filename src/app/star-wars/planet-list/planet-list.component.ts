@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PlanetListComponent implements OnInit {
   @Input() planetName: string | undefined;
 
-// I'm leaving the HttpClient on for testing purposes. TODO delete when finished
+// TODO I'm leaving the HttpClient on for testing purposes. TODO delete when finished
   constructor(private http: HttpClient) {
     // this.getPlanets().subscribe((planets: any) => {
     //   // populate array with planets.
