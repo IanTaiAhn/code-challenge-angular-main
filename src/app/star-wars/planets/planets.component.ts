@@ -23,7 +23,6 @@ export class PlanetsComponent implements OnInit {
   public show8:boolean = false;
   public show9:boolean = false;
 
-
   //first planet 
   planet0: string | undefined;
   planetKeysArr0: Array<any> = [];
@@ -99,6 +98,7 @@ export class PlanetsComponent implements OnInit {
 
       // Start of planet details | Prolly should make method to make this cleaner.
       // I also need to get the 9th and 10th element of the object array, and iterate through those to get the residents/films
+      // Right now it doesn't show the residents or films, so that's a bug.
       for (const [key, val] of Object.entries(this.planetArr[0])) {
         this.planetKeysArr0.push(key);
         this.planetValsArr0.push(val);

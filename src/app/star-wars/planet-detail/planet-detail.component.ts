@@ -12,37 +12,9 @@ export class PlanetDetailComponent implements OnInit {
   planetArr: Array<any> = [];
   @Input() planetKeys: Array<any> = [];
   @Input() planetVals: Array<any> = [];
-
-  // I messed up the interpolation in the planets.component.html file, and I think
-  // that is why my map didn't work. 
-  // TODO delete when done.
-  planetKeysArr: Array<any> = []; // for tests
-  planetValsArr: Array<any> = []; // for tests
-
-// I'm leaving the HttpClient on for testing purposes. TODO delete when finished
-constructor(private http: HttpClient) {
-  // this.getPlanets().subscribe((planets: any) => {
-  //   // populate array with planets.
-  //   planets.results.forEach((element: any) => {
-  //     this.planetArr.push(element);
-  //   });
-  //   // Here we're sorting the array of objects by name.
-  //   this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
-    
-  //   // testing purposes.
-  //   // for (const [key, val] of Object.entries(this.planetArr[0])) {
-  //   //   console.log('key ' + key);
-  //   //   // console.log('val ' + val);
-  //   //   this.planetKeysArr.push(key);
-  //   //   this.planetValsArr.push(val);
-  //   // }
-  // });
- }
-// TODO delete when finished
-//  getPlanets(): Observable<any> {
-//   const planetApiUrl = 'https://swapi.dev/api/planets';
-//   return this.http.get(planetApiUrl);
-// }
+  // I messed up the interpolation in the planets.component.html file,
+  // and I think that is why my map didn't work. 
+constructor() {}
 
   ngOnInit(): void {
   }

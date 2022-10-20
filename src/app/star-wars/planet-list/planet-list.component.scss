@@ -1,12 +1,11 @@
-.text-green {
-    color: rgb(26, 193, 26);
+.text-style {
+    color: green;
+    font-family: "Oxygen", Arial, Helvetica, sans-serif;
+    font-size: x-large;
 }
 
-.hidden {
-    display: none;
+.planetName:hover {
+    color: antiquewhite;
+    cursor: pointer;
+    
 }
-
-.max-w {
-    max-width: 32rem;
-}
-// We need a container class that will give a max-width.

@@ -10,25 +10,8 @@ import { Observable } from 'rxjs';
 export class PlanetListComponent implements OnInit {
   @Input() planetName: string | undefined;
 
-// TODO I'm leaving the HttpClient on for testing purposes. TODO delete when finished
-  constructor(private http: HttpClient) {
-    // this.getPlanets().subscribe((planets: any) => {
-    //   // populate array with planets.
-    //   planets.results.forEach((element: any) => {
-    //     this.planetArr.push(element);
-    //   });
-    //   // Here we're sorting the array of objects by name.
-    //   this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
-
-    // });
-   }
-
-  //TODO Delete when done
-  //  getPlanets(): Observable<any> {
-  //   const planetApiUrl = 'https://swapi.dev/api/planets';
-  //   return this.http.get(planetApiUrl);
-  // }
-
+  constructor() {}
+  
   ngOnInit(): void {
   }
 

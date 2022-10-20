@@ -1,15 +1,13 @@
 .textStyleKeys {
-    color: rgb(152, 8, 8);
+    color: rgb(200, 9, 9);
     font-size: large;
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
-    // opacity: 1;
 }
 
 .textStyleVals {
     color: aqua;
     font-size: large;
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
-    // opacity: 1;
 }
 
 .flex {
@@ -21,10 +19,6 @@
     position: absolute;
 }
 
-.max-w {
-    max-width: fit-content;
-}
-
 .bg-opacity {
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.8);
 }

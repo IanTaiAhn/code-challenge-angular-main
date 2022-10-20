@@ -2,14 +2,14 @@
         <h1 class="titleFont">Star Wars Planets</h1>
 </header>
     <!-- I found out I was doing interpolation wrong for maps, and this is why I started to use arrays
-        I may go back and fiddle with using maps instead since right now it's kind of ugly. -->
+        I may go back and fiddle with using maps instead since the data doesn't line up with each other. -->
 
 <!-- Section for planets. -->
 <section class="container p-2 flex">
-    <!-- Maybe make section relative, or divs relative, and then the app-planet-detail absolute. -->
+
     <!-- First block -->
     <div class="p-2 bg-img0 flex-item-size">
-        <app-planet-list (click)="toggle0()" class="textStyle" planetName={{planet0}}></app-planet-list>
+        <app-planet-list (click)="toggle0()" planetName={{planet0}}></app-planet-list>
         <ng-container *ngIf="show0">
         <app-planet-detail [planetKeys]="planetKeysArr0" [planetVals]="planetValsArr0"></app-planet-detail>
         </ng-container>
@@ -17,7 +17,7 @@
 
     <!-- Second block -->
     <div class="p-2 bg-img1 flex-item-size">
-        <app-planet-list (click)="toggle1()" class="textStyle" planetName={{planet1}}></app-planet-list>
+        <app-planet-list (click)="toggle1()" planetName={{planet1}}></app-planet-list>
         <ng-container *ngIf="show1">
         <app-planet-detail [planetKeys]="planetKeysArr1" [planetVals]="planetValsArr1"></app-planet-detail>
         </ng-container>
@@ -25,7 +25,7 @@
 
     <!-- third block -->
     <div class="p-2 bg-img2 flex-item-size">
-        <app-planet-list (click)="toggle2()" class="textStyle" planetName={{planet2}}></app-planet-list>
+        <app-planet-list (click)="toggle2()" planetName={{planet2}}></app-planet-list>
         <ng-container *ngIf="show2">
         <app-planet-detail [planetKeys]="planetKeysArr2" [planetVals]="planetValsArr2"></app-planet-detail>
         </ng-container>
@@ -33,7 +33,7 @@
 
     <!-- fourth block -->
     <div class="p-2 bg-img3 flex-item-size">
-        <app-planet-list (click)="toggle3()" class="textStyle" planetName={{planet3}}></app-planet-list>
+        <app-planet-list (click)="toggle3()" planetName={{planet3}}></app-planet-list>
         <ng-container *ngIf="show3">
         <app-planet-detail [planetKeys]="planetKeysArr3" [planetVals]="planetValsArr3"></app-planet-detail>
         </ng-container>
@@ -41,7 +41,7 @@
     
     <!-- fifth block -->
     <div class="p-2 bg-img4 flex-item-size">
-        <app-planet-list (click)="toggle4()" class="textStyle" planetName={{planet4}}></app-planet-list>
+        <app-planet-list (click)="toggle4()" planetName={{planet4}}></app-planet-list>
         <ng-container *ngIf="show4">
         <app-planet-detail [planetKeys]="planetKeysArr4" [planetVals]="planetValsArr4"></app-planet-detail>
         </ng-container>
@@ -49,7 +49,7 @@
 
     <!-- sixth block -->
     <div class="p-2 bg-img5 flex-item-size">
-        <app-planet-list (click)="toggle5()" class="textStyle" planetName={{planet5}}></app-planet-list>
+        <app-planet-list (click)="toggle5()" planetName={{planet5}}></app-planet-list>
         <ng-container *ngIf="show5">
         <app-planet-detail [planetKeys]="planetKeysArr5" [planetVals]="planetValsArr5"></app-planet-detail>
         </ng-container>
@@ -57,7 +57,7 @@
 
     <!-- seventh block -->
     <div class="p-2 bg-img6 flex-item-size">
-        <app-planet-list (click)="toggle6()" class="textStyle" planetName={{planet6}}></app-planet-list>
+        <app-planet-list (click)="toggle6()" planetName={{planet6}}></app-planet-list>
         <ng-container *ngIf="show6">
         <app-planet-detail [planetKeys]="planetKeysArr6" [planetVals]="planetValsArr6"></app-planet-detail>
         </ng-container>
@@ -65,7 +65,7 @@
 
     <!-- eighth block -->
     <div class="p-2 bg-img7 flex-item-size">
-        <app-planet-list (click)="toggle7()" class="textStyle" planetName={{planet7}}></app-planet-list>
+        <app-planet-list (click)="toggle7()" planetName={{planet7}}></app-planet-list>
         <ng-container *ngIf="show7">
         <app-planet-detail [planetKeys]="planetKeysArr7" [planetVals]="planetValsArr7"></app-planet-detail>
         </ng-container>
@@ -73,7 +73,7 @@
 
     <!-- ninth block -->
     <div class="p-2 bg-img8 flex-item-size">
-        <app-planet-list (click)="toggle8()" class="textStyle" planetName={{planet8}}></app-planet-list>
+        <app-planet-list (click)="toggle8()" planetName={{planet8}}></app-planet-list>
         <ng-container *ngIf="show8">
         <app-planet-detail [planetKeys]="planetKeysArr8" [planetVals]="planetValsArr8"></app-planet-detail>
         </ng-container>
@@ -81,7 +81,7 @@
 
     <!-- tenth block -->
     <div class="p-2 bg-img9 flex-item-size">
-        <app-planet-list (click)="toggle9()" class="textStyle" planetName={{planet9}}></app-planet-list>
+        <app-planet-list (click)="toggle9()" planetName={{planet9}}></app-planet-list>
         <ng-container *ngIf="show9">
         <app-planet-detail [planetKeys]="planetKeysArr9" [planetVals]="planetValsArr9"></app-planet-detail>
         </ng-container>
