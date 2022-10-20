@@ -16,6 +16,7 @@ export class PlanetDetailComponent implements OnInit {
   planetValsArr: Array<any> = []; // for tests
   // I messed up the interpolation in the planets.component.html file, and I think
   // that is why my map didn't work. 
+
 constructor(private http: HttpClient) {
   this.getPlanets().subscribe((planets: any) => {
     // populate array with planets.
@@ -34,6 +35,8 @@ constructor(private http: HttpClient) {
     // }
   });
  }
+
+ 
 
  getPlanets(): Observable<any> {
   const planetApiUrl = 'https://swapi.dev/api/planets';

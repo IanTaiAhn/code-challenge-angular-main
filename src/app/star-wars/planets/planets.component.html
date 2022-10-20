@@ -4,11 +4,15 @@
     I may go back and fiddle with using maps instead since right now it's kind of ugly. -->
 
 <!-- One thing of info -->
-<app-planet-list class="textStyle" planetName={{planet0}}></app-planet-list>
+<app-planet-list (click)="toggle()" class="textStyle" planetName={{planet0}}></app-planet-list>
+<ng-container *ngIf="show1">
 <app-planet-detail [planetKeys]="planetKeysArr0" [planetVals]="planetValsArr0"></app-planet-detail>
+</ng-container>
 
 <!-- One thing of info -->
-<app-planet-list class="textStyle" planetName={{planet1}}></app-planet-list>
+<app-planet-list (click)="toggle2()" class="textStyle" planetName={{planet1}}></app-planet-list>
+<ng-container *ngIf="show2">
 <app-planet-detail [planetKeys]="planetKeysArr1" [planetVals]="planetValsArr1"></app-planet-detail>
+</ng-container>
 
 <!-- <app-planet-detail></app-planet-detail> -->

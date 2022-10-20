@@ -11,6 +11,10 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
 export class PlanetsComponent implements OnInit {
   // I'm going to go the route of a bunch of variables...
   planetArr: Array<any> = [];
+  // I also may go this hideous route. Ah!
+  public show1:boolean = false;
+  public show2:boolean = false;
+
 
   //first planet 
   planet0: string | undefined;
@@ -33,6 +37,8 @@ export class PlanetsComponent implements OnInit {
       this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
       // Testing inputs
       console.log(this.planetArr);
+
+
       // Start of planet names
       this.planet0 = this.planetArr[0].name;
       this.planet1 = this.planetArr[1].name;
@@ -48,6 +54,8 @@ export class PlanetsComponent implements OnInit {
         this.planetKeysArr1.push(key);
         this.planetValsArr1.push(val);
       }
+
+
 
       // planetArr is an array of objects.
       for (const el of this.planetArr) {
@@ -70,9 +78,17 @@ export class PlanetsComponent implements OnInit {
     });
    }
 
-   showDetails()  {
+
+   toggle()  {
     console.log("showing up here");
     // Now here we will make our details show from the planet-detail.components.
+    this.show1 = !this.show1;
+   }
+
+   toggle2()  {
+    console.log("showing up here");
+    // Now here we will make our details show from the planet-detail.components.
+    this.show2 = !this.show2;
    }
 
   getPlanets(): Observable<any> {
