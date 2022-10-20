@@ -2,18 +2,18 @@
     color: rgb(152, 8, 8);
     font-size: large;
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
+    // opacity: 1;
 }
 
 .textStyleVals {
     color: aqua;
     font-size: large;
     font-family: "Oxygen", Arial, Helvetica, sans-serif;
+    // opacity: 1;
 }
 
 .flex {
     display: flex;
-    // justify-content: center;
-    // align-items: center;
     column-gap: 2rem;
 }
 
@@ -22,5 +22,9 @@
 }
 
 .max-w {
-    max-width: 32rem;
+    max-width: fit-content;
+}
+
+.bg-opacity {
+    background-color: rgba(0,0,0,.5);
 }
