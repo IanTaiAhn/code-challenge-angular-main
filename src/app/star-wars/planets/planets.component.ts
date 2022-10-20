@@ -9,28 +9,46 @@ import { PlanetsService } from 'src/app/star-wars/planets.service';
   styleUrls: ['./planets.component.scss']
 })
 export class PlanetsComponent implements OnInit {
-  // We can have all 10 planets, and assign them to our sorted array.
-  planet1: string | undefined;
-  planet2: string | undefined;
+  // I'm going to go the route of a bunch of variables...
   planetArr: Array<any> = [];
 
-  constructor(private planetsService: PlanetsService, private http: HttpClient) {
-    // Maybe it's better to create them out of this constructor?
-    // const planetArr: any[] = [];
+  //first planet 
+  planet0: string | undefined;
+  planetKeysArr0: Array<any> = [];
+  planetValsArr0: Array<any> = [];
 
+  //second planet
+  planet1: string | undefined;
+  planetKeysArr1: Array<any> = [];
+  planetValsArr1: Array<any> = [];
+  constructor(private planetsService: PlanetsService, private http: HttpClient) {
+    // 
     this.getPlanets().subscribe((planets: any) => {
       // populate array with planets.
       planets.results.forEach((element: any) => {
         this.planetArr.push(element);
       });
-      // Will delete later
-      this.planet1 = planets.results[0].name;
-      this.planet2 = planets.results[1].name;
 
-      // console.log(this.planetArr[0]);
-      // Here we're sorting the array of objects by name.
+      // Sort
       this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
-      
+      // Testing inputs
+      console.log(this.planetArr);
+      // Start of planet names
+      this.planet0 = this.planetArr[0].name;
+      this.planet1 = this.planetArr[1].name;
+
+      // Start of planet details
+      for (const [key, val] of Object.entries(this.planetArr[0])) {
+        // console.log('val ' + val);
+        this.planetKeysArr0.push(key);
+        this.planetValsArr0.push(val);
+      }
+      for (const [key, val] of Object.entries(this.planetArr[1])) {
+        // console.log('val ' + val);
+        this.planetKeysArr1.push(key);
+        this.planetValsArr1.push(val);
+      }
+
       // planetArr is an array of objects.
       for (const el of this.planetArr) {
         // console.log(el.name);
@@ -39,27 +57,23 @@ export class PlanetsComponent implements OnInit {
         // use values array or:
         // console.log(values);
         // for (const val of Object.values(el)) {
-        // // use val
         // console.log(val);
         // }
+
         // We have 11 important key/vals in the planet object.
-        // Ideally, I don't have two arrays, instead, maybe I can sort the array by the value of the name.
         for (const [key, val] of Object.entries(el)) {
-          // use key and val
-          console.log(key);
-          console.log(val);
+          // console.log(key);
+          // console.log(val);
           // Maybe now, we create variables that hold the key and values for the planets. 
         }
       }
-
     });
-    // Can't have it outside of the api call loop since it loads.
-
-
    }
 
-  getPlanetName() {
-  }
+   showDetails()  {
+    console.log("showing up here");
+    // Now here we will make our details show from the planet-detail.components.
+   }
 
   getPlanets(): Observable<any> {
     const planetApiUrl = 'https://swapi.dev/api/planets';

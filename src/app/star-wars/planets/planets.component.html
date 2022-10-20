@@ -1,9 +1,14 @@
 <h1>Star Wars Planets</h1>
 
-<app-planet-list planetName={{planet1}}></app-planet-list>
+<!-- I found out I was doing interpolation wrong for maps, and this is why I started to use arrays
+    I may go back and fiddle with using maps instead since right now it's kind of ugly. -->
 
-<app-planet-list planetName={{planet2}}></app-planet-list>
+<!-- One thing of info -->
+<app-planet-list class="textStyle" planetName={{planet0}}></app-planet-list>
+<app-planet-detail [planetKeys]="planetKeysArr0" [planetVals]="planetValsArr0"></app-planet-detail>
 
-<p *ngFor="let planetArr of planetArr">{{planetArr.name}}{{planetArr.climate}}</p>
+<!-- One thing of info -->
+<app-planet-list class="textStyle" planetName={{planet1}}></app-planet-list>
+<app-planet-detail [planetKeys]="planetKeysArr1" [planetVals]="planetValsArr1"></app-planet-detail>
 
-<app-planet-detail></app-planet-detail>
+<!-- <app-planet-detail></app-planet-detail> -->
