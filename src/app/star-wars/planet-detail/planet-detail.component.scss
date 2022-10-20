@@ -17,8 +17,10 @@
     column-gap: 2rem;
 }
 
-.container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.positionAbs   {
+    position: absolute;
+}
+
+.max-w {
+    max-width: 32rem;
 }

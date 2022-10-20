@@ -1,67 +1,89 @@
-<header class="container">
-    <h1 class="titleFont">Star Wars Planets</h1>
+<header class="container p-2">
+        <h1 class="titleFont">Star Wars Planets</h1>
 </header>
-<!-- I found out I was doing interpolation wrong for maps, and this is why I started to use arrays
-    I may go back and fiddle with using maps instead since right now it's kind of ugly. -->
+    <!-- I found out I was doing interpolation wrong for maps, and this is why I started to use arrays
+        I may go back and fiddle with using maps instead since right now it's kind of ugly. -->
 
-<!-- First block -->
-<app-planet-list (click)="toggle0()" class="textStyle" planetName={{planet0}}></app-planet-list>
-<ng-container *ngIf="show0">
-<app-planet-detail [planetKeys]="planetKeysArr0" [planetVals]="planetValsArr0"></app-planet-detail>
-</ng-container>
+<!-- Section for planets. -->
+<section class="container p-2 grid">
+    <!-- Maybe make section relative, or divs relative, and then the app-planet-detail absolute. -->
+    <!-- First block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle0()" class="textStyle" planetName={{planet0}}></app-planet-list>
+        <ng-container *ngIf="show0">
+        <app-planet-detail [planetKeys]="planetKeysArr0" [planetVals]="planetValsArr0"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- Second block -->
-<app-planet-list (click)="toggle1()" class="textStyle" planetName={{planet1}}></app-planet-list>
-<ng-container *ngIf="show1">
-<app-planet-detail [planetKeys]="planetKeysArr1" [planetVals]="planetValsArr1"></app-planet-detail>
-</ng-container>
+    <!-- Second block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle1()" class="textStyle" planetName={{planet1}}></app-planet-list>
+        <ng-container *ngIf="show1">
+        <app-planet-detail [planetKeys]="planetKeysArr1" [planetVals]="planetValsArr1"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- third block -->
-<app-planet-list (click)="toggle2()" class="textStyle" planetName={{planet2}}></app-planet-list>
-<ng-container *ngIf="show2">
-<app-planet-detail [planetKeys]="planetKeysArr2" [planetVals]="planetValsArr2"></app-planet-detail>
-</ng-container>
+    <!-- third block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle2()" class="textStyle" planetName={{planet2}}></app-planet-list>
+        <ng-container *ngIf="show2">
+        <app-planet-detail [planetKeys]="planetKeysArr2" [planetVals]="planetValsArr2"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- fourth block -->
-<app-planet-list (click)="toggle3()" class="textStyle" planetName={{planet3}}></app-planet-list>
-<ng-container *ngIf="show3">
-<app-planet-detail [planetKeys]="planetKeysArr3" [planetVals]="planetValsArr3"></app-planet-detail>
-</ng-container>
+    <!-- fourth block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle3()" class="textStyle" planetName={{planet3}}></app-planet-list>
+        <ng-container *ngIf="show3">
+        <app-planet-detail [planetKeys]="planetKeysArr3" [planetVals]="planetValsArr3"></app-planet-detail>
+        </ng-container>
+    </div>
+    
+    <!-- fifth block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle4()" class="textStyle" planetName={{planet4}}></app-planet-list>
+        <ng-container *ngIf="show4">
+        <app-planet-detail [planetKeys]="planetKeysArr4" [planetVals]="planetValsArr4"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- fifth block -->
-<app-planet-list (click)="toggle4()" class="textStyle" planetName={{planet4}}></app-planet-list>
-<ng-container *ngIf="show4">
-<app-planet-detail [planetKeys]="planetKeysArr4" [planetVals]="planetValsArr4"></app-planet-detail>
-</ng-container>
+    <!-- sixth block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle5()" class="textStyle" planetName={{planet5}}></app-planet-list>
+        <ng-container *ngIf="show5">
+        <app-planet-detail [planetKeys]="planetKeysArr5" [planetVals]="planetValsArr5"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- sixth block -->
-<app-planet-list (click)="toggle5()" class="textStyle" planetName={{planet5}}></app-planet-list>
-<ng-container *ngIf="show5">
-<app-planet-detail [planetKeys]="planetKeysArr5" [planetVals]="planetValsArr5"></app-planet-detail>
-</ng-container>
+    <!-- seventh block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle6()" class="textStyle" planetName={{planet6}}></app-planet-list>
+        <ng-container *ngIf="show6">
+        <app-planet-detail [planetKeys]="planetKeysArr6" [planetVals]="planetValsArr6"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- seventh block -->
-<app-planet-list (click)="toggle6()" class="textStyle" planetName={{planet6}}></app-planet-list>
-<ng-container *ngIf="show6">
-<app-planet-detail [planetKeys]="planetKeysArr6" [planetVals]="planetValsArr6"></app-planet-detail>
-</ng-container>
+    <!-- eighth block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle7()" class="textStyle" planetName={{planet7}}></app-planet-list>
+        <ng-container *ngIf="show7">
+        <app-planet-detail [planetKeys]="planetKeysArr7" [planetVals]="planetValsArr7"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- eighth block -->
-<app-planet-list (click)="toggle7()" class="textStyle" planetName={{planet7}}></app-planet-list>
-<ng-container *ngIf="show7">
-<app-planet-detail [planetKeys]="planetKeysArr7" [planetVals]="planetValsArr7"></app-planet-detail>
-</ng-container>
+    <!-- ninth block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle8()" class="textStyle" planetName={{planet8}}></app-planet-list>
+        <ng-container *ngIf="show8">
+        <app-planet-detail [planetKeys]="planetKeysArr8" [planetVals]="planetValsArr8"></app-planet-detail>
+        </ng-container>
+    </div>
 
-<!-- ninth block -->
-<app-planet-list (click)="toggle8()" class="textStyle" planetName={{planet8}}></app-planet-list>
-<ng-container *ngIf="show8">
-<app-planet-detail [planetKeys]="planetKeysArr8" [planetVals]="planetValsArr8"></app-planet-detail>
-</ng-container>
-
-<!-- tenth block -->
-<app-planet-list (click)="toggle9()" class="textStyle" planetName={{planet9}}></app-planet-list>
-<ng-container *ngIf="show9">
-<app-planet-detail [planetKeys]="planetKeysArr9" [planetVals]="planetValsArr9"></app-planet-detail>
-</ng-container>
-
-<!-- <app-planet-detail></app-planet-detail> -->
+    <!-- tenth block -->
+    <div class="p-2">
+        <app-planet-list (click)="toggle9()" class="textStyle" planetName={{planet9}}></app-planet-list>
+        <ng-container *ngIf="show9">
+        <app-planet-detail [planetKeys]="planetKeysArr9" [planetVals]="planetValsArr9"></app-planet-detail>
+        </ng-container>
+    </div>
+</section>
