@@ -1,7 +1,7 @@
 @import '~primeng/resources/themes/lara-light-blue/theme.css';
 
 // Best practice for global css?
-// Container
+// Container? might not need the media queries.
 .container {
     width: 100%;
 }
@@ -39,4 +39,12 @@
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
+}
+
+.blue-bg {
+    background-color: blue;
+}
+
+.textStyle {
+    font-family: "star", Arial, Helvetica, sans-serif;
 }

@@ -1,11 +1,24 @@
-.textStyle {
-    color: maroon;
-    font-size: medium;
+.textStyleKeys {
+    color: rgb(152, 8, 8);
+    font-size: large;
+    font-family: "Oxygen", Arial, Helvetica, sans-serif;
 }
 
-.layout {
+.textStyleVals {
+    color: aqua;
+    font-size: large;
+    font-family: "Oxygen", Arial, Helvetica, sans-serif;
+}
+
+.flex {
     display: flex;
     // justify-content: center;
     // align-items: center;
     column-gap: 2rem;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }

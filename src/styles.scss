@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Oxygen";
+    src: local("Oxygen"), url(./assets/fonts/quantico/Quantico-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Star";
+    src: local("Star"), url(./assets/titleFont/starduster3/stardusterexpand2.ttf) format("truetype");
+}
+
+body {
+    background-image: url("./assets/bg/starwars_bg.jpg");
+}
