@@ -82,7 +82,7 @@ export class PlanetsComponent implements OnInit {
       // Sort alphabetically
       this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
       // Console log, and potentially include a test here to prove it's alphabetical.
-      console.log(this.planetArr);
+      // console.log(this.planetArr);
 
       // Start of planet names
       this.planet0 = this.planetArr[0].name;
@@ -109,6 +109,13 @@ export class PlanetsComponent implements OnInit {
           this.planetValsArr0[9][count0++] = people.name;
         });
       });
+      // Rest Api Calls for the Films | Gosh. I'm using a lot of variables. There must be a better way!
+      let count0F = 0;
+      this.planetValsArr0[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr0[10][count0F++] = films.title;
+        });
+      });
 
       // For planet 1
       for (const [key, val] of Object.entries(this.planetArr[1])) {
@@ -120,6 +127,13 @@ export class PlanetsComponent implements OnInit {
       this.planetValsArr1[9].forEach((element: any) => {
         this.getPeople(element).subscribe((people: any) => {
           this.planetValsArr1[9][count1++] = people.name;
+        });
+      });
+      // Rest Api Calls for the Films
+      let count1F = 0;
+      this.planetValsArr1[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr1[10][count1F++] = films.title;
         });
       });
 
@@ -135,26 +149,46 @@ export class PlanetsComponent implements OnInit {
           this.planetValsArr2[9][count2++] = people.name;
         });
       });
+      // Rest Api Calls for the Films
+      let count2F = 0;
+      this.planetValsArr2[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr2[10][count2F++] = films.title;
+        });
+      });
 
       // For planet 3
       for (const [key, val] of Object.entries(this.planetArr[3])) {
         this.planetKeysArr3.push(key);
         this.planetValsArr3.push(val);
       }
-      // We got yoda on this planet, so the array is empty.
+      // We got a mysterious yoda on this planet, so the array is empty.
       this.planetValsArr3[9][0] = "N/A";
+      // Rest Api Calls for the Films
+      let count3F = 0;
+      this.planetValsArr3[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr3[10][count3F++] = films.title;
+        });
+      });
 
       // For planet 4
       for (const [key, val] of Object.entries(this.planetArr[4])) {
         this.planetKeysArr4.push(key);
         this.planetValsArr4.push(val);
       }
-      console.log(this.planetValsArr4);
       // Rest Api Calls to update People
       let count4 = 0;
       this.planetValsArr4[9].forEach((element: any) => {
         this.getPeople(element).subscribe((people: any) => {
           this.planetValsArr4[9][count4++] = people.name;
+        });
+      });
+      // Rest Api Calls for the Films
+      let count4F = 0;
+      this.planetValsArr4[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr4[10][count4F++] = films.title;
         });
       });
 
@@ -165,6 +199,13 @@ export class PlanetsComponent implements OnInit {
       }
       // Hoth is an ice block, no peeps live here.
       this.planetValsArr5[9][0] = "N/A";
+      // Rest Api Calls for the Films
+      let count5F = 0;
+      this.planetValsArr5[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr5[10][count5F++] = films.title;
+        });
+      });
 
       // For planet 6
       for (const [key, val] of Object.entries(this.planetArr[6])) {
@@ -176,6 +217,13 @@ export class PlanetsComponent implements OnInit {
       this.planetValsArr6[9].forEach((element: any) => {
         this.getPeople(element).subscribe((people: any) => {
           this.planetValsArr6[9][count6++] = people.name;
+        });
+      });
+      // Rest Api Calls for the Films
+      let count6F = 0;
+      this.planetValsArr6[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr6[10][count6F++] = films.title;
         });
       });
 
@@ -191,6 +239,13 @@ export class PlanetsComponent implements OnInit {
           this.planetValsArr7[9][count7++] = people.name;
         });
       });
+      // Rest Api Calls for the Films
+      let count7F = 0;
+      this.planetValsArr7[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr7[10][count7F++] = films.title;
+        });
+      });
 
       // For planet 8
       for (const [key, val] of Object.entries(this.planetArr[8])) {
@@ -204,6 +259,13 @@ export class PlanetsComponent implements OnInit {
           this.planetValsArr8[9][count8++] = people.name;
         });
       });
+      // Rest Api Calls for the Films
+      let count8F = 0;
+      this.planetValsArr8[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr8[10][count8F++] = films.title;
+        });
+      });
 
       // For planet 9
       for (const [key, val] of Object.entries(this.planetArr[9])) {
@@ -211,7 +273,15 @@ export class PlanetsComponent implements OnInit {
         this.planetValsArr9.push(val);
       }
       this.planetValsArr9[9][0] = "N/A";
+      // Rest Api Calls for the Films
+      let count9F = 0;
+      this.planetValsArr9[10].forEach((element: any) => {
+        this.getFilms(element).subscribe((films: any) => {
+          this.planetValsArr9[10][count9F++] = films.title;
+        });
+      });
     });
+
    }
 
 
@@ -263,6 +333,11 @@ export class PlanetsComponent implements OnInit {
   getPeople(url: any): Observable<any> {
     const peopleApiUrl = url;
     return this.http.get(peopleApiUrl);
+  }
+
+  getFilms(url: any): Observable<any> {
+    const filmsApiUrl = url;
+    return this.http.get(filmsApiUrl);
   }
 
   ngOnInit(): void {
