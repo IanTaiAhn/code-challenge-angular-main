@@ -96,76 +96,121 @@ export class PlanetsComponent implements OnInit {
       this.planet8 = this.planetArr[8].name;
       this.planet9 = this.planetArr[9].name;
 
-      // Start of planet details | Prolly should make method to make this cleaner.
-      // I also need to get the 9th and 10th element of the object array, and iterate through those to get the residents/films
-      // Right now it doesn't show the residents or films, so that's a bug.
+
+      // For planet 0
       for (const [key, val] of Object.entries(this.planetArr[0])) {
         this.planetKeysArr0.push(key);
         this.planetValsArr0.push(val);
       }
-      // I think I may be able to just change the array holding the vals for the films and residents with another loop.
-
-      // console.log(this.planetValsArr0[9]);
-      // We are testing api calls to the people, and films from our detail list.
-      // I honestly don't know how this works, I just copied the other rest api call syntax haha.
-      this.getPeople(this.planetValsArr0[9][0]).subscribe((people: any) => {
-        // We cant foreach in this api call .
-        // people.forEach((element: any) => {
-        //   // this.planetArr.push(element);
-        //   console.log(element);
-        // });
-        // console.log(people.name);
-      });
-
+      // Rest Api Calls to update People | idk why but i can't resuse the same count, or else it bugs out.
+      let count0 = 0;
       this.planetValsArr0[9].forEach((element: any) => {
-        // console.log(element);
         this.getPeople(element).subscribe((people: any) => {
-          // We cant foreach in this api call .
-          // people.forEach((element: any) => {
-          //   // this.planetArr.push(element);
-          //   console.log(element);
-          // });
-          console.log(people.name);
+          this.planetValsArr0[9][count0++] = people.name;
         });
       });
-      
 
+      // For planet 1
       for (const [key, val] of Object.entries(this.planetArr[1])) {
         this.planetKeysArr1.push(key);
         this.planetValsArr1.push(val);
       }
+      // Rest Api Calls to update People
+      let count1 = 0;
+      this.planetValsArr1[9].forEach((element: any) => {
+        this.getPeople(element).subscribe((people: any) => {
+          this.planetValsArr1[9][count1++] = people.name;
+        });
+      });
+
+      // For planet 2
       for (const [key, val] of Object.entries(this.planetArr[2])) {
         this.planetKeysArr2.push(key);
         this.planetValsArr2.push(val);
       }
+      // Rest Api Calls to update People
+      let count2 = 0;
+      this.planetValsArr2[9].forEach((element: any) => {
+        this.getPeople(element).subscribe((people: any) => {
+          this.planetValsArr2[9][count2++] = people.name;
+        });
+      });
+
+      // For planet 3
       for (const [key, val] of Object.entries(this.planetArr[3])) {
         this.planetKeysArr3.push(key);
         this.planetValsArr3.push(val);
       }
+      // We got yoda on this planet, so the array is empty.
+      this.planetValsArr3[9][0] = "N/A";
+
+      // For planet 4
       for (const [key, val] of Object.entries(this.planetArr[4])) {
         this.planetKeysArr4.push(key);
         this.planetValsArr4.push(val);
       }
+      console.log(this.planetValsArr4);
+      // Rest Api Calls to update People
+      let count4 = 0;
+      this.planetValsArr4[9].forEach((element: any) => {
+        this.getPeople(element).subscribe((people: any) => {
+          this.planetValsArr4[9][count4++] = people.name;
+        });
+      });
+
+      // For planet 5
       for (const [key, val] of Object.entries(this.planetArr[5])) {
         this.planetKeysArr5.push(key);
         this.planetValsArr5.push(val);
       }
+      // Hoth is an ice block, no peeps live here.
+      this.planetValsArr5[9][0] = "N/A";
+
+      // For planet 6
       for (const [key, val] of Object.entries(this.planetArr[6])) {
         this.planetKeysArr6.push(key);
         this.planetValsArr6.push(val);
       }
+      // Rest Api Calls to update People
+      let count6 = 0;
+      this.planetValsArr6[9].forEach((element: any) => {
+        this.getPeople(element).subscribe((people: any) => {
+          this.planetValsArr6[9][count6++] = people.name;
+        });
+      });
+
+      // For planet 7
       for (const [key, val] of Object.entries(this.planetArr[7])) {
         this.planetKeysArr7.push(key);
         this.planetValsArr7.push(val);
       }
+      // Rest Api Calls to update People
+      let count7 = 0;
+      this.planetValsArr7[9].forEach((element: any) => {
+        this.getPeople(element).subscribe((people: any) => {
+          this.planetValsArr7[9][count7++] = people.name;
+        });
+      });
+
+      // For planet 8
       for (const [key, val] of Object.entries(this.planetArr[8])) {
         this.planetKeysArr8.push(key);
         this.planetValsArr8.push(val);
       }
+      // Rest Api Calls to update People
+      let count8 = 0;
+      this.planetValsArr8[9].forEach((element: any) => {
+        this.getPeople(element).subscribe((people: any) => {
+          this.planetValsArr8[9][count8++] = people.name;
+        });
+      });
+
+      // For planet 9
       for (const [key, val] of Object.entries(this.planetArr[9])) {
         this.planetKeysArr9.push(key);
         this.planetValsArr9.push(val);
       }
+      this.planetValsArr9[9][0] = "N/A";
     });
    }
 
