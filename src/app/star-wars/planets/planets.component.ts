@@ -103,6 +103,33 @@ export class PlanetsComponent implements OnInit {
         this.planetKeysArr0.push(key);
         this.planetValsArr0.push(val);
       }
+      // I think I may be able to just change the array holding the vals for the films and residents with another loop.
+
+      // console.log(this.planetValsArr0[9]);
+      // We are testing api calls to the people, and films from our detail list.
+      // I honestly don't know how this works, I just copied the other rest api call syntax haha.
+      this.getPeople(this.planetValsArr0[9][0]).subscribe((people: any) => {
+        // We cant foreach in this api call .
+        // people.forEach((element: any) => {
+        //   // this.planetArr.push(element);
+        //   console.log(element);
+        // });
+        // console.log(people.name);
+      });
+
+      this.planetValsArr0[9].forEach((element: any) => {
+        // console.log(element);
+        this.getPeople(element).subscribe((people: any) => {
+          // We cant foreach in this api call .
+          // people.forEach((element: any) => {
+          //   // this.planetArr.push(element);
+          //   console.log(element);
+          // });
+          console.log(people.name);
+        });
+      });
+      
+
       for (const [key, val] of Object.entries(this.planetArr[1])) {
         this.planetKeysArr1.push(key);
         this.planetValsArr1.push(val);
@@ -186,6 +213,11 @@ export class PlanetsComponent implements OnInit {
   getPlanets(): Observable<any> {
     const planetApiUrl = 'https://swapi.dev/api/planets';
     return this.http.get(planetApiUrl);
+  }
+
+  getPeople(url: any): Observable<any> {
+    const peopleApiUrl = url;
+    return this.http.get(peopleApiUrl);
   }
 
   ngOnInit(): void {
