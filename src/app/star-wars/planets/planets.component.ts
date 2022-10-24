@@ -93,6 +93,7 @@ export class PlanetsComponent implements OnInit {
   planetKeysArr9: Array<any> = [];
   planetValsArr9: Array<any> = [];
 
+  // I read that best practice is not to have nested subscribes... Wuh uh.
   constructor(private planetsService: PlanetsService, private http: HttpClient) {
     this.getPlanets().subscribe((planets: any) => {
       // populate array with planets.
