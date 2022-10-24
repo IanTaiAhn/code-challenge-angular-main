@@ -117,6 +117,7 @@ export class PlanetsComponent implements OnInit {
       this.planet9 = this.planetArr[9].name;
 
 
+      // Maybe look into promises, for the api calls.
       // For planet 0
       for (const [key, val] of Object.entries(this.planetArr[0])) {
         this.planetKeysArr0.push(key);
