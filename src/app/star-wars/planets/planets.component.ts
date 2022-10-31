@@ -94,6 +94,8 @@ export class PlanetsComponent implements OnInit {
   planetValsArr9: Array<any> = [];
 
   // I read that best practice is not to have nested subscribes... Wuh oh.
+  // TODO Consider using a switchmap to avoid nested subscribes.
+  // I also realize now we imported planetsService with the getPlanets().subscrbe method, so I didn't need to do it in here.
   constructor(private planetsService: PlanetsService, private http: HttpClient) {
     this.getPlanets().subscribe((planets: any) => {
       // populate array with planets.
@@ -105,7 +107,7 @@ export class PlanetsComponent implements OnInit {
       // Console log, and potentially include a test here to prove it's alphabetical.
       // console.log(this.planetArr);
 
-      // Start of planet names
+      // Declare planet names
       this.planet0 = this.planetArr[0].name;
       this.planet1 = this.planetArr[1].name;
       this.planet2 = this.planetArr[2].name;
@@ -118,7 +120,6 @@ export class PlanetsComponent implements OnInit {
       this.planet9 = this.planetArr[9].name;
 
 
-      // Maybe look into promises, for the api calls.
       // For planet 0
       for (const [key, val] of Object.entries(this.planetArr[0])) {
         this.planetKeysArr0.push(key);
