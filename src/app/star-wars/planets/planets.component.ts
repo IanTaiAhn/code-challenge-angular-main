@@ -97,6 +97,10 @@ export class PlanetsComponent implements OnInit {
   // TODO Consider using a switchmap to avoid nested subscribes.
   // I also realize now we imported planetsService with the getPlanets().subscrbe method, so I didn't need to do it in here.
   constructor(private planetsService: PlanetsService, private http: HttpClient) {
+    // Should of used this instead haha.
+    // planetsService.getPlanets().subscribe((planets: any) => {
+    //   console.log(planets);
+    // })
     this.getPlanets().subscribe((planets: any) => {
       // populate array with planets.
       planets.results.forEach((element: any) => {
