@@ -99,7 +99,6 @@ export class PlanetsComponent implements OnInit {
       });
       this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
 
-      // Declare planet names
       this.planet0 = this.planetArr[0].name;
       this.planet1 = this.planetArr[1].name;
       this.planet2 = this.planetArr[2].name;
