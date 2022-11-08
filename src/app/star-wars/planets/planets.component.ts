@@ -29,9 +29,7 @@ const fadeOut = trigger('fadeOut', [exitTransition]);
   animations: [fadeIn, fadeOut],
 })
 export class PlanetsComponent implements OnInit {
-  // I'm going to go the route of a bunch of variables...
   planetArr: Array<any> = [];
-  // I also may go this hideous route. Ah!
   public show0:boolean = false;
   public show1:boolean = false;
   public show2:boolean = false;
@@ -93,23 +91,13 @@ export class PlanetsComponent implements OnInit {
   planetKeysArr9: Array<any> = [];
   planetValsArr9: Array<any> = [];
 
-  // I read that best practice is not to have nested subscribes... Wuh oh.
-  // TODO Consider using a switchmap to avoid nested subscribes.
-  // I also realize now we imported planetsService with the getPlanets().subscrbe method, so I didn't need to do it in here.
   constructor(private planetsService: PlanetsService, private http: HttpClient) {
-    // Should of used this instead haha.
-    // planetsService.getPlanets().subscribe((planets: any) => {
-    //   console.log(planets);
-    // })
-    this.getPlanets().subscribe((planets: any) => {
-      // populate array with planets.
+    planetsService.getPlanets().subscribe((planets: any) => {
       planets.results.forEach((element: any) => {
         this.planetArr.push(element);
+      console.log(planets.results);
       });
-      // Sort alphabetically
       this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
-      // Console log, and potentially include a test here to prove it's alphabetical.
-      // console.log(this.planetArr);
 
       // Declare planet names
       this.planet0 = this.planetArr[0].name;
@@ -123,194 +111,40 @@ export class PlanetsComponent implements OnInit {
       this.planet8 = this.planetArr[8].name;
       this.planet9 = this.planetArr[9].name;
 
-
-      // For planet 0
-      for (const [key, val] of Object.entries(this.planetArr[0])) {
-        this.planetKeysArr0.push(key);
-        this.planetValsArr0.push(val);
-      }
-      // Rest Api Calls to update People | idk why but i can't resuse the same count, or else it bugs out.
-      let count0 = 0;
-      this.planetValsArr0[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr0[9][count0++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films | Gosh. I'm using a lot of variables. There must be a better way!
-      let count0F = 0;
-      this.planetValsArr0[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr0[10][count0F++] = films.title;
-        });
-      });
-
-      // For planet 1
-      for (const [key, val] of Object.entries(this.planetArr[1])) {
-        this.planetKeysArr1.push(key);
-        this.planetValsArr1.push(val);
-      }
-      // Rest Api Calls to update People
-      let count1 = 0;
-      this.planetValsArr1[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr1[9][count1++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films
-      let count1F = 0;
-      this.planetValsArr1[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr1[10][count1F++] = films.title;
-        });
-      });
-
-      // For planet 2
-      for (const [key, val] of Object.entries(this.planetArr[2])) {
-        this.planetKeysArr2.push(key);
-        this.planetValsArr2.push(val);
-      }
-      // Rest Api Calls to update People
-      let count2 = 0;
-      this.planetValsArr2[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr2[9][count2++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films
-      let count2F = 0;
-      this.planetValsArr2[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr2[10][count2F++] = films.title;
-        });
-      });
-
-      // For planet 3
-      for (const [key, val] of Object.entries(this.planetArr[3])) {
-        this.planetKeysArr3.push(key);
-        this.planetValsArr3.push(val);
-      }
-      // We got a mysterious yoda on this planet, so the array is empty.
+      this.apiCallPlanet(this.planetKeysArr0, this.planetValsArr0, 0);
+      this.apiCallPlanet(this.planetKeysArr1, this.planetValsArr1, 1);
+      this.apiCallPlanet(this.planetKeysArr2, this.planetValsArr2, 2);
+      this.apiCallPlanet(this.planetKeysArr3, this.planetValsArr3, 3);
       this.planetValsArr3[9][0] = "N/A";
-      // Rest Api Calls for the Films
-      let count3F = 0;
-      this.planetValsArr3[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr3[10][count3F++] = films.title;
-        });
-      });
-
-      // For planet 4
-      for (const [key, val] of Object.entries(this.planetArr[4])) {
-        this.planetKeysArr4.push(key);
-        this.planetValsArr4.push(val);
-      }
-      // Rest Api Calls to update People
-      let count4 = 0;
-      this.planetValsArr4[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr4[9][count4++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films
-      let count4F = 0;
-      this.planetValsArr4[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr4[10][count4F++] = films.title;
-        });
-      });
-
-      // For planet 5
-      for (const [key, val] of Object.entries(this.planetArr[5])) {
-        this.planetKeysArr5.push(key);
-        this.planetValsArr5.push(val);
-      }
-      // Hoth is an ice block, no peeps live here.
+      this.apiCallPlanet(this.planetKeysArr4, this.planetValsArr4, 4);
+      this.apiCallPlanet(this.planetKeysArr5, this.planetValsArr5, 5);
       this.planetValsArr5[9][0] = "N/A";
-      // Rest Api Calls for the Films
-      let count5F = 0;
-      this.planetValsArr5[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr5[10][count5F++] = films.title;
-        });
-      });
-
-      // For planet 6
-      for (const [key, val] of Object.entries(this.planetArr[6])) {
-        this.planetKeysArr6.push(key);
-        this.planetValsArr6.push(val);
-      }
-      // Rest Api Calls to update People
-      let count6 = 0;
-      this.planetValsArr6[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr6[9][count6++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films
-      let count6F = 0;
-      this.planetValsArr6[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr6[10][count6F++] = films.title;
-        });
-      });
-
-      // For planet 7
-      for (const [key, val] of Object.entries(this.planetArr[7])) {
-        this.planetKeysArr7.push(key);
-        this.planetValsArr7.push(val);
-      }
-      // Rest Api Calls to update People
-      let count7 = 0;
-      this.planetValsArr7[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr7[9][count7++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films
-      let count7F = 0;
-      this.planetValsArr7[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr7[10][count7F++] = films.title;
-        });
-      });
-
-      // For planet 8
-      for (const [key, val] of Object.entries(this.planetArr[8])) {
-        this.planetKeysArr8.push(key);
-        this.planetValsArr8.push(val);
-      }
-      // Rest Api Calls to update People
-      let count8 = 0;
-      this.planetValsArr8[9].forEach((element: any) => {
-        this.getPeople(element).subscribe((people: any) => {
-          this.planetValsArr8[9][count8++] = people.name;
-        });
-      });
-      // Rest Api Calls for the Films
-      let count8F = 0;
-      this.planetValsArr8[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr8[10][count8F++] = films.title;
-        });
-      });
-
-      // For planet 9
-      for (const [key, val] of Object.entries(this.planetArr[9])) {
-        this.planetKeysArr9.push(key);
-        this.planetValsArr9.push(val);
-      }
+      this.apiCallPlanet(this.planetKeysArr6, this.planetValsArr6, 6);
+      this.apiCallPlanet(this.planetKeysArr7, this.planetValsArr7, 7);
+      this.apiCallPlanet(this.planetKeysArr8, this.planetValsArr8, 8);
+      this.apiCallPlanet(this.planetKeysArr9, this.planetValsArr9, 9);
       this.planetValsArr9[9][0] = "N/A";
-      // Rest Api Calls for the Films
-      let count9F = 0;
-      this.planetValsArr9[10].forEach((element: any) => {
-        this.getFilms(element).subscribe((films: any) => {
-          this.planetValsArr9[10][count9F++] = films.title;
-        });
-      });
     });
-
    }
 
+   apiCallPlanet(planetKeysArr: Array<any>, planetValsArr: any, planetIndex: number) {
+    for (const [key, val] of Object.entries(this.planetArr[planetIndex])) {
+      planetKeysArr.push(key);
+      planetValsArr.push(val);
+    }
+    let count0 = 0;
+    planetValsArr[9].forEach((element: any) => {
+      this.getPeople(element).subscribe((people: any) => {
+        planetValsArr[9][count0++] = people.name;
+      });
+    });
+    let count0F = 0;
+    planetValsArr[10].forEach((element: any) => {
+      this.getFilms(element).subscribe((films: any) => {
+        planetValsArr[10][count0F++] = films.title;
+      });
+    });
+   }
 
    toggle0()  {
     this.show0 = !this.show0;
@@ -352,11 +186,6 @@ export class PlanetsComponent implements OnInit {
     this.show9 = !this.show9;
    }
    
-  getPlanets(): Observable<any> {
-    const planetApiUrl = 'https://swapi.dev/api/planets';
-    return this.http.get(planetApiUrl);
-  }
-
   getPeople(url: any): Observable<any> {
     const peopleApiUrl = url;
     return this.http.get(peopleApiUrl);
