@@ -12,6 +12,7 @@ export class PlanetDetailComponent implements OnInit {
 constructor() {}
 
   ngOnInit(): void {
+    
   }
 
 }
