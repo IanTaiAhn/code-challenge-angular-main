@@ -1,4 +1,5 @@
-<div class="flex positionAbs bg-opacity max-w">
+<app-planet-list (click)="toggle0()" ></app-planet-list>
+<div class="flex positionAbs bg-opacity max-w" *ngIf="show0">
     <div class="p-2">
         <p class="textStyleKeys" *ngFor="let keys of planetKeys">{{keys}}</p>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { PlanetsService } from 'src/app/star-wars/planets.service';
@@ -30,6 +30,8 @@ const fadeOut = trigger('fadeOut', [exitTransition]);
 })
 export class PlanetsComponent implements OnInit {
   planetArr: Array<any> = [];
+  @Input() planets: Array<any> = [];
+
   public show0:boolean = false;
   public show1:boolean = false;
   public show2:boolean = false;
@@ -95,6 +97,7 @@ export class PlanetsComponent implements OnInit {
     planetsService.getPlanets().subscribe((planets: any) => {
       planets.results.forEach((element: any) => {
         this.planetArr.push(element);
+        this.planets.push(element);
       console.log(planets.results);
       });
       this.planetArr.sort((a, b) => a.name.localeCompare(b.name));
