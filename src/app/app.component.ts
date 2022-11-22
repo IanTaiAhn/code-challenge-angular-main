@@ -14,8 +14,8 @@ export class AppComponent {
   constructor(private planetsService: PlanetsService) {
     planetsService.getPlanets().subscribe((planets: any) => {
       planets.results.forEach((element: any) => {
-      console.log(planets.results);
-      this.planetArr.push(planets.results.name);
+      // console.log(planets.results);
+      // this.planetArr.push(planets.results.name);
       });
     });
   }

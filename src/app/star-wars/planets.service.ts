@@ -9,8 +9,8 @@ export class PlanetsService {
 
     // Example on getting planets from swapi api
     this.getPlanets().subscribe((planets: any) => {
-      console.log(planets);
-      planets.results.forEach((element: any) => console.log(element.name));
+      // console.log(planets);
+      // planets.results.forEach((element: any) => console.log(element.name));
     });
   }
 
