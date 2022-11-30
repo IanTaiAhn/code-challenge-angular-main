@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 ![eve coding challenge banner](docs/banner.png)
 # Join Eve Financial - the coding challenge
 
