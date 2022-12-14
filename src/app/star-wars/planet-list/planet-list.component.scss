@@ -1,10 +1,82 @@
-// .text-style {
-//     color: green;
-//     font-family: "Oxygen", Arial, Helvetica, sans-serif;
-//     font-size: x-large;
-// }
+.text-style {
+    color: green;
+    font-family: "Oxygen", Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
 
-// .planetName:hover {
-//     color: antiquewhite;
-//     cursor: pointer;
-// }
+.planetName:hover {
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+
+
+
+// // Start of planet images
+.bg-img0 {
+    background: url("/assets/planetsImg/Alderaan.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bg-img1 {
+    background: url("/assets/planetsImg/Bespin.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img2 {
+    background: url("/assets/planetsImg/Coruscant.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bg-img3 {
+    background: url("/assets/planetsImg/Dagobah.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img4 {
+    background: url("/assets/planetsImg/Endor.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img5 {
+    background: url("/assets/planetsImg/Hoth.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img6 {
+    background: url("/assets/planetsImg/Kamino.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img7 {
+    background: url("/assets/planetsImg/Naboo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img8 {
+    background: url("/assets/planetsImg/Tatooine.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg-img9 {
+    background: url("/assets/planetsImg/Yavin-4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}

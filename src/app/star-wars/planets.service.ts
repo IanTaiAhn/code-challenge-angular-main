@@ -7,7 +7,6 @@ export class PlanetsService {
 
   constructor(private http: HttpClient) {
 
-    // Example on getting planets from swapi api
     this.getPlanets().subscribe((planets: any) => {
       // console.log(planets);
       // planets.results.forEach((element: any) => console.log(element.name));
@@ -22,5 +21,10 @@ export class PlanetsService {
   getPeople(url: any): Observable<any> {
     const peopleApiUrl = url;
     return this.http.get(peopleApiUrl);
+  }
+
+  getFilms(url: any): Observable<any> {
+    const filmsApiUrl = url;
+    return this.http.get(filmsApiUrl);
   }
 }

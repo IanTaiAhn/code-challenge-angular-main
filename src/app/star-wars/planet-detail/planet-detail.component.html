@@ -1,16 +1,5 @@
-<!-- <div class="p-2 bg-img0 flex-item-size" *ngFor="let keys of thePlanets; index as i"> -->
-    <!-- <app-planet-list planetName={{thePlanets[i].name}}></app-planet-list> -->
-    <!-- <app-planet-detail  @fadeIn @fadeOut [planetKeys]="thePlanets" [planetVals]="planetValsArr0"></app-planet-detail> -->
-
-        <!-- <app-planet-list (click)="toggle0()"></app-planet-list> -->
-        <div class="flex positionAbs bg-opacity max-w" >
-        <!-- <app-planet-list (click)="toggle0()" *ngFor="let keys of thePlanets; index as i" planetName={{thePlanets[i].name}}> -->
-            <div class="p-2">
-                <p class="textStyleKeys">{{planetKeys}}</p>
-            </div>
-            <div class="p-2">
-                <p class="textStyleVals">{{planetVals}}</p>
-            </div>
-        <!-- </app-planet-list> -->
-            <!-- <p class="textStyleVals">{{stringTest}}</p> -->
-        </div>
+    <div *ngFor="let el of planetDetails | keyvalue">
+        <p class="flex bg-opacity textStyleVals">{{el.key}}: {{el.value}}</p>
+        <p *ngIf="el.key === 'films'">film apis</p>
+        <p *ngIf="el.key === 'residents'">resident api</p>
+    </div>

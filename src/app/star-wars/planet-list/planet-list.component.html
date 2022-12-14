@@ -1,2 +1,6 @@
-    <!-- <h1 class="max-w planetName text-style">test planet</h1> -->
-    <h1 class="max-w planetName text-style">{{planetName}}</h1>
+<div class="" *ngFor="let item of planetName; let index=index">
+    <h1 class="text-style planetName " (click)="expandDetails(index)">{{item.name}}</h1>
+    <div *ngIf="flagArray[index] === true">
+        <app-planet-detail [planetDetails]="item"></app-planet-detail>
+    </div>
+</div>

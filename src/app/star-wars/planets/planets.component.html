@@ -1,9 +1,7 @@
-<!-- <app-planet-list (click)="toggle0()" *ngFor="let keys of thePlanets; index as i" planetName={{thePlanets[i].name}}> -->
+<header class="p-2 flex-row twinkling">
+    <h1 class="titleFont">Star Wars Planets</h1>
+</header>
+
 <section class="p-2 flex twinkling">
-    <div class="p-2 bg-img0 flex-item-size" *ngFor="let keys of thePlanets; index as i">
-        <app-planet-list (click)="toggle0()" planetName={{thePlanets[i].name}}></app-planet-list>
-        <app-planet-detail *ngIf="show0" @fadeIn @fadeOut [planetKeys]="planetKeysArr[i]" [planetVals]="planetValsArr[i]"></app-planet-detail>
-        <!-- <app-planet-detail  @fadeIn @fadeOut [planetKeys]="thePlanets" [planetVals]="planetValsArr0"></app-planet-detail> -->
-    </div>
+        <app-planet-list></app-planet-list>
 </section>
-<!-- </app-planet-list> -->
