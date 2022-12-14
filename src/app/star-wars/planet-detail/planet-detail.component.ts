@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-planet-detail',
@@ -7,9 +7,4 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PlanetDetailComponent {
 @Input() planetDetails: Array<any> = [];
-
-// Run some code here that replaces the film, and residents.
-ngOnInit(): void {
-  // console.log(this.planetDetails);
-}
 }

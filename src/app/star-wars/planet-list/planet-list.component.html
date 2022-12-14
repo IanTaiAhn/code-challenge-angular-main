@@ -1,6 +1,6 @@
 <div class="" *ngFor="let item of planetName; let index=index">
     <h1 class="text-style planetName " (click)="expandDetails(index)">{{item.name}}</h1>
     <div *ngIf="flagArray[index] === true">
-        <app-planet-detail [planetDetails]="item"></app-planet-detail>
+        <app-planet-detail @fadeIn @fadeOut [planetDetails]="item"></app-planet-detail>
     </div>
 </div>

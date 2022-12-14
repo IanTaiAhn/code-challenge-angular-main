@@ -1,40 +1,40 @@
-// @font-face {
-//     font-family: "Oxygen";
-//     src: local("Oxygen"), url(./assets/fonts/quantico/Quantico-Regular.ttf) format("truetype");
-// }
+@font-face {
+    font-family: "Oxygen";
+    src: local("Oxygen"), url(./assets/fonts/quantico/Quantico-Regular.ttf) format("truetype");
+}
 
-// @font-face {
-//     font-family: "Star";
-//     src: local("Star"), url(./assets/titleFont/starduster3/stardusterexpand2.ttf) format("truetype");
-// }
+@font-face {
+    font-family: "Star";
+    src: local("Star"), url(./assets/titleFont/starduster3/stardusterexpand2.ttf) format("truetype");
+}
 
-// // Global styles 
-// body {
-//     background:transparent url(./assets/bg/starwars_bg.jpg);
-//     z-index:1;
-//     animation:move-stars-back 700s linear infinite;
-// }
+// Global styles 
+body {
+    background:transparent url(./assets/bg/starwars_bg.jpg);
+    z-index:1;
+    animation:move-stars-back 700s linear infinite;
+}
 
-// @keyframes move-stars-back {
-//     from {background-position:0 0;}
-//     to {background-position:5000px -10000px;}
-// }
+@keyframes move-stars-back {
+    from {background-position:0 0;}
+    to {background-position:5000px -10000px;}
+}
 
-// @keyframes move-twink-back {
-//     from {background-position:0 0;}
-//     to {background-position:-10000px 5000px;}
-// }
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
 
-// .twinkling {
-//     background:transparent url(./assets/twinkling.png) repeat;
-//     z-index: 1;
-//     animation:move-twink-back 1000s linear infinite;
-//   }
+.twinkling {
+    background:transparent url(./assets/twinkling.png) repeat;
+    z-index: 1;
+    animation:move-twink-back 1000s linear infinite;
+  }
 
-// .p-2 {
-//     padding: 0.5rem;
-// }
+.p-2 {
+    padding: 0.5rem;
+}
 
-// .max-w {
-//     max-width: fit-content;
-// }
+.max-w {
+    max-width: fit-content;
+}
