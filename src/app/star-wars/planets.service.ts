@@ -6,11 +6,8 @@ import { Observable } from 'rxjs';
 export class PlanetsService {
 
   constructor(private http: HttpClient) {
-
-    this.getPlanets().subscribe((planets: any) => {
-      // console.log(planets);
-      // planets.results.forEach((element: any) => console.log(element.name));
-    });
+    // this.getPlanets().subscribe((planets: any) => {
+    // });
   }
 
   getPlanets(): Observable<any> {
